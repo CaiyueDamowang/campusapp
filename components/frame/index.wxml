@@ -1,0 +1,8 @@
+<view class="wrapper">
+  <navbar></navbar>
+	<slot></slot>
+  <slot name="loading"></slot>
+  <slot name="modal"></slot>
+  <slot name="animation"></slot>
+  <window></window>
+</view>

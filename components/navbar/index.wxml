@@ -1,0 +1,6 @@
+<cover-view class="nav-bar">
+  <cover-view class="tool-bar" style="height: {{statusBarHeight}}">title</cover-view>
+  <cover-view class="title-bar">
+    slider
+  </cover-view>
+</cover-view>
