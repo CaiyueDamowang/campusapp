@@ -1,10 +1,10 @@
 <view class="wrapper">
 
-	<navbar></navbar>
+	<Navbar status-bar-height="{{statusBarHeight}}"></Navbar>
 	
   <!-- scroll-view api 文档 https://developers.weixin.qq.com/miniprogram/dev/component/scroll-view.html -->
-  <!-- 因为需要设置动态高度所以需要计算nav和window的高度 进行计算 -->
-  <scroll-view class="view-entry">
+  <!-- 因为需要设置高度所以需要获取nav和window的高度 进行计算 -->
+  <scroll-view class="view-entry" style="height: calc(100% - {{statusBarHeight}}px - {{windowBarHeight}});" scroll-y>
 		<slot></slot><!-- view组件入口 -->
 	</scroll-view>
 
@@ -12,6 +12,6 @@
 	<slot name="modal"></slot>
 	<slot name="animation"></slot>
 
-	<window></window>
+	<Window window-bar-height="{{windowBarHeight}}"></Window>
 
 </view>

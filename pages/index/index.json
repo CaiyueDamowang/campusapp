@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "frame": "../../components/frame"
+    "Frame": "../../components/Frame",
+    "Login": "../../views/Login",
+    "Mine": "../../views/Mine"
   }
 }

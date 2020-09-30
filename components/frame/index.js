@@ -1,11 +1,11 @@
 // components/frame/index.js
 Component({
   properties: {
-
   },
 
   data: {
     statusBarHeight: 20,
+    windowBarHeight: '100rpx'
   },
 
   methods: {

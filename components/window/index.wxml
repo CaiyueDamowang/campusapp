@@ -1,1 +1,4 @@
-<cover-view class="window">底部菜单</cover-view>
+<cover-view class="window" style="height: {{windowBarHeight}}" bindtap="redirectRouter">
+  <cover-view data-route="login">登陆</cover-view>
+  <cover-view data-route="mine">我的</cover-view>
+</cover-view>

@@ -1,6 +1,7 @@
 <cover-view class="nav-bar">
-  <cover-view class="tool-bar" style="height: {{statusBarHeight}}">title</cover-view>
+  <!-- 此处直接查询 设备的信息 所以用px而不是rpx -->
+  <cover-view class="tool-bar" style="height: {{statusBarHeight}}px"></cover-view>
   <cover-view class="title-bar">
-    slider
+
   </cover-view>
 </cover-view>
