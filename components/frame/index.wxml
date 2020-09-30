@@ -1,8 +1,17 @@
 <view class="wrapper">
-  <navbar></navbar>
-	<slot></slot>
-  <slot name="loading"></slot>
-  <slot name="modal"></slot>
-  <slot name="animation"></slot>
-  <window></window>
+
+	<navbar></navbar>
+	
+  <!-- scroll-view api 文档 https://developers.weixin.qq.com/miniprogram/dev/component/scroll-view.html -->
+  <!-- 因为需要设置动态高度所以需要计算nav和window的高度 进行计算 -->
+  <scroll-view class="view-entry">
+		<slot></slot><!-- view组件入口 -->
+	</scroll-view>
+
+	<slot name="loading"></slot>
+	<slot name="modal"></slot>
+	<slot name="animation"></slot>
+
+	<window></window>
+
 </view>

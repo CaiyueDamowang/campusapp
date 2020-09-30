@@ -1,1 +1,1 @@
-<text>components/toolbar/index.wxml</text>
+<cover-view class="window">底部菜单</cover-view>

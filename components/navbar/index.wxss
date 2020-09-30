@@ -1,1 +1,5 @@
-/* components/navigator/index.wxss */
+.nav-bar {
+  width: 100%;
+  background: #f38;
+  z-index: 99;
+}
