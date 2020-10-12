@@ -1,4 +1,3 @@
-// components/frame/index.js
 Component({
   properties: {
   },
@@ -10,19 +9,7 @@ Component({
 
   methods: {
     getTabbarHeight() {
-      const promisify = (api) => {
-        return function (option) {
-          return new Promise((resolve, reject) => {
-            api({
-              ...option,
-              success: (result) => resolve(result),
-              fail: (reason) => reject(reason),
-            })
-          })
-        }
-      }
-
-      const getHeight = promisify(wx.getSystemInfo)
+      const getHeight = this.promisify(wx.getSystemInfo)
       return getHeight().then(res => res.statusBarHeight)
     }
   },

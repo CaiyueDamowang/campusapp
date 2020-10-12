@@ -9,5 +9,10 @@ Component({
 
   methods: {
 
+  },
+  lifetimes: {
+    attached() {
+      this.triggerEvent('changeRouter', { router: 'login' })
+    }
   }
 })

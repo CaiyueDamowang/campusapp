@@ -1,7 +1,11 @@
-//app.js
+import { extendComponent, extendPage } from "./utils/extendPage";
+import usePromisify from "./utils/usePromisify";
+
 App({
   onLaunch: function () {
-
+    const plugins = [usePromisify()]
+    Page = extendPage(plugins)
+    Component = extendComponent(plugins)
 
     // 登录
     wx.login({

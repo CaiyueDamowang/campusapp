@@ -1,16 +1,10 @@
 const app = getApp()
 
 Component({
-  /**
-   * 组件的属性列表
-   */
   properties: {
 
   },
 
-  /**
-   * 组件的初始数据
-   */
   data: {
     motto: 'Hello World',
     userInfo: {},
@@ -51,7 +45,6 @@ Component({
 
   methods: {
     getUserInfo(e) {
-      console.log(e)
       app.globalData.userInfo = e.detail.userInfo
       this.setData({
         userInfo: e.detail.userInfo,
