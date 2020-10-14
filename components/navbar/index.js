@@ -1,9 +1,19 @@
 Component({
   properties: {
-    statusBarHeight: {
+
+    statusBar: {
       type: Number,
-      value: 20   // 大部分机型状态栏的高度
+    },
+    custom: {
+      type: Object,
+    },
+    customBar: {
+      type: Number
+    },
+    isBack: {
+      type: Boolean
     }
+
   },
 
   data: {
@@ -13,9 +23,10 @@ Component({
   methods: {
 
   },
+
   lifetimes: {
     attached() {
-
+      console.log(this.data.statusBar, this.data.custom, this.data.customBar, 'nav')
     }
   }
 })

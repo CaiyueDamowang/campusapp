@@ -1,15 +1,16 @@
 <view class="wrapper">
-	<Navbar status-bar-height="{{statusBarHeight}}"></Navbar>
-  <!-- scroll-view api 文档 https://developers.weixin.qq.com/miniprogram/dev/component/scroll-view.html -->
-  <!-- 因为需要设置高度所以需要获取nav和window的高度 进行计算 -->
-  <scroll-view class="view-entry" style="height: calc(100% - {{statusBarHeight}}px - {{windowBarHeight}});" scroll-y>
-		<slot></slot><!-- view组件入口 -->
+		<!-- 带有首页样式或者返回的导航栏 包括： 手机屏幕状态栏等高的组件 和 下方导航 -->
+	<Navbar  status-bar="{{statusBar}}" custom-bar="{{customBar}}" custom="{{custom}}" is-back="{{isBack}}" is-custom="{{!isCutsom}}"></Navbar>
+		<!-- view组件入口 -->
+  <scroll-view class="view-entry" style="height: calc(100% - {{customBar}}px - {{windowBar}});" scroll-y>
+		<slot></slot>
 	</scroll-view>
-
+		<!-- loading 组件入口 数据加载中生成骨架屏或者loadingui -->
 	<slot name="loading"></slot>
+		<!-- 弹窗统一管理 -->
 	<slot name="modal"></slot>
+		<!-- 动画组件 -->
 	<slot name="animation"></slot>
-
-	<Window window-bar-height="{{windowBarHeight}}"></Window>
-
+		<!-- 菜单导航 首页跳转路由 -->
+	<Window window-bar-height="{{windowBar}}"></Window>
 </view>

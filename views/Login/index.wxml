@@ -1,7 +1,3 @@
-<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}" slot="nav">
-	<view slot="backText">返回</view>
-	<view slot="content">表单</view>
-</cu-custom>
 <view class="container">
 	
 	<view class="userinfo">
@@ -12,9 +8,9 @@
 			<!-- 登录表单 -->
 			<view class="form">
 				<view class="form-item s-text">账号</view>
-				<input class="form-item" type="text" bindinput="getAccount"></input>
+				<input class="form-item" type="text" bindinput="getInput(account)"></input>
 				<view class="form-item s-text">密码</view>
-				<input class="form-item" type="password" bindinput="getPassword"></input>
+				<input class="form-item" type="password" bindinput="getInput(passWord)"></input>
 			</view>
 			<view class="trans-btm btn-wrapper">
 				<button class="form-item login btnn" bindtap="login">登陆</button>

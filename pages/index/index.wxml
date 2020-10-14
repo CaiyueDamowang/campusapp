@@ -1,4 +1,4 @@
-<Wrapper>
+<Wrapper isBack="true">
 	<Login></Login>
 	<Mine wx:if="{{router === 'mine'}}" bind:changeRouter="changeRouter"></Mine>
 </Wrapper>

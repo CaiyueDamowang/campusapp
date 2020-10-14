@@ -1,26 +1,36 @@
 Component({
   properties: {
+    isBack: {
+      type: Boolean
+    }
   },
 
   data: {
-    statusBarHeight: 20,
-    windowBarHeight: '100rpx'
+    statusBar: 20,
+    custom: 0,
+    customBar: 0,
+    windowBar: '100',
   },
 
   methods: {
-    getTabbarHeight() {
-      const getHeight = this.promisify(wx.getSystemInfo)
-      return getHeight().then(res => res.statusBarHeight)
+    getSystemInfo() {
+      const getSystemInfo = this.promisify(wx.getSystemInfo)
+      return getSystemInfo()
     }
   },
+
   lifetimes: {
     attached() {
-      this.getTabbarHeight()
-        .then(statusBarHeight => {
-          statusBarHeight != this.data.statusBarHeight &&
-            this.setData({
-              statusBarHeight
-            })
+      this.getSystemInfo()
+      .then((e) => {
+          const custom = wx.getMenuButtonBoundingClientRect()
+          this.setData({
+            statusBar: e.statusBarHeight,
+            custom: custom,
+            customBar: custom.bottom + custom.top - e.statusBarHeight
+          })
+        }).then(() => {
+          console.log(this.data.customBar, this.data.statusBar, this.data.custom, 'wrapper',   this.data.custom.bottom + this.data.custom.top - this.data.statusBar)
         })
     },
   }

@@ -1,15 +1,10 @@
 const app = getApp();
 Component({
-  /**
-   * 组件的一些选项
-   */
   options: {
     addGlobalClass: true,
     multipleSlots: true
   },
-  /**
-   * 组件的对外属性
-   */
+
   properties: {
     bgColor: {
       type: String,
@@ -27,18 +22,26 @@ Component({
       type: String,
       default: ''
     },
+    statusBar: {
+      type: Number,
+    },
+    customBar: {
+      type: Number,
+    },
+    custom: {
+      type: Object
+    }
   },
-  /**
-   * 组件的初始数据
-   */
+
   data: {
-    StatusBar: app.globalData.StatusBar,
-    CustomBar: app.globalData.CustomBar,
-    Custom: app.globalData.Custom
+
   },
-  /**
-   * 组件的方法列表
-   */
+
+  lifetimes: {
+    attached() {
+      console.log(this.data, this.data.customBar, this.data.statusBar)
+    }
+  },
   methods: {
     BackPage() {
       wx.navigateBack({
