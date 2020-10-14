@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-<scroll-view class="scrollPage"></scroll-view>
-=======
+
 <cu-custom bgColor="bg-gradual-pink" isBack="{{true}}" slot="nav">
 	<view slot="backText">返回</view>
 	<view slot="content">表单</view>
 </cu-custom>
->>>>>>> 18f84e54fbfd4b7e654ad7166f239da79cc3e429
 <view class="container">
 	<view class="userinfo">
 		<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>

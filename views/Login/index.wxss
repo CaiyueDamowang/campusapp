@@ -9,7 +9,6 @@
 } 
 
 .circle{
-  border-color: #1cbbb4;
   border-radius: 15px;
   border: 1px solid;
   margin-top: 20px;
