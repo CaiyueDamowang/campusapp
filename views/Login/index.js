@@ -9,7 +9,9 @@ Component({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    username: '',
+    password: ''
   },
 
   lifetimes: {
@@ -50,6 +52,45 @@ Component({
         userInfo: e.detail.userInfo,
         hasUserInfo: true
       })
-    }
+    },
+    login: function() {
+      // wx.showLoading({ title: '登陆中' })
+      let userData = JSON.stringify({
+        username: this.data.username,
+        password: this.data.password
+      }); 
+      console.log(userData);
+      // loginCUMT(encrypt(userData))   // 登陆密文
+      //   .then((res) => {
+      //     wx.hideLoading()
+      //     if (res.data.code !== 200) {
+      //       wx.showModal({ title: '登陆失败' })
+      //       return
+      //     }else {
+      //       wx.clearStorage() // 清除之前的用户信息
+      //       let token = res.data.data
+      //       // setStore({ 'token': token })
+      //       wx.setStorageSync('token', token)
+
+      //       toMine() // 登陆成功
+      //     }
+      //   })
+      //   .catch(err => {
+      //     wx.hideLoading()
+      //     console.log(err)
+      //   })
+    },
+// 获取输入的账号
+    getAccount: function (e) {
+      this.setData({
+        username: e.detail.value
+      });
+    },
+// 获取输入的密码
+    getPassword: function (e) {
+      this.setData({
+        password: e.detail.value
+      });
+    },
   }
 })

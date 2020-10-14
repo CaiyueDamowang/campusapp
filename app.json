@@ -1,8 +1,13 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/others/index"
+    "pages/others/index",
+    "views/Login/index"
   ],
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
