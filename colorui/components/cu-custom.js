@@ -38,9 +38,7 @@ Component({
   },
 
   lifetimes: {
-    attached() {
-      console.log(this.data, this.data.customBar, this.data.statusBar)
-    }
+
   },
   methods: {
     BackPage() {
