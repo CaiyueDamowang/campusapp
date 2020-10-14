@@ -1,4 +1,4 @@
-<Frame>
+<Wrapper>
 	<Login wx:if="{{router === 'login'}}"></Login>
 	<Mine wx:if="{{router === 'mine'}}" bind:changeRouter="changeRouter"></Mine>
-</Frame>
+</Wrapper>

@@ -1,6 +1,5 @@
 const extendOptions = (options, expantion) => {
   // -- dev --
-
   const optionsKeys = Object.keys(options);
 
   let conflictKey;
@@ -22,13 +21,14 @@ const extendOptions = (options, expantion) => {
   return Object.assign(options, expantion);
 };
 
-const reduceMergeExpantions = (initialContext, expantions) => {
-  const reducer = (context, expantion) => extendOptions(context, expantion)
-  return expantions.reduce(reducer, initialContext);
+const reduceMergeExpantions = (initialOptions, plugins) => {
+  const reducer = (context, plugin) => extendOptions(context, plugin)
+  return plugins.reduce(reducer, initialOptions);
 };
 
 const extendComponent = (plugins) => {
   const constructor = Component
+
   return (options) => {
     !options.methods && (options.methods = {})
     options.methods = reduceMergeExpantions(options.methods, plugins)
@@ -36,9 +36,9 @@ const extendComponent = (plugins) => {
   }
 }
 
-
 const extendPage = (plugins) => {
   const constructor = Page
+
   return (options) => {
     const expandOptions = reduceMergeExpantions(options, plugins);
     constructor(expandOptions)

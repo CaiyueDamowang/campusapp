@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "Frame": "../../components/Frame",
+    "Wrapper": "../../components/Wrapper",
     "Login": "../../views/Login",
     "Mine": "../../views/Mine"
   }

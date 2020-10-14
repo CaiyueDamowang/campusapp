@@ -1,13 +1,7 @@
-const promiseCach = new Map()
+
 const promisify = (api) => {
   if (typeof api !== 'function') throw new Error(`${api} is not a function`)
-
-  const hasAlreadyPromisify = promiseCach.has(api)
-  if (hasAlreadyPromisify) {
-    return promiseCach.get(api)
-  }
-
-  const promisifyCallback = (option) => 
+  return (option) => 
     new Promise((resolve, reject) => {
       api({
         ...option,
@@ -16,14 +10,11 @@ const promisify = (api) => {
       })
     })
 
-  promiseCach.set(api, promisifyCallback)
-  return promisifyCallback
+
+  return 
 }
 
-const usePromisify = () => {
-  return {
-    promisify
-  }
-}
+module.exports = {
+  promisify
 
-module.exports = usePromisify
+}
