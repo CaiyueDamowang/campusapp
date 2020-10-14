@@ -1,9 +1,9 @@
 import { extendComponent, extendPage } from "./utils/extendPage";
-import usePromisify from "./utils/usePromisify";
+import promisify from "./utils/usePromisify";
 
 App({
   onLaunch: function () {
-    const plugins = [usePromisify()]
+    const plugins = [promisify]
     Page = extendPage(plugins)
     Component = extendComponent(plugins)
 

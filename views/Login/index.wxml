@@ -1,4 +1,4 @@
-<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}" slot="nav">
 	<view slot="backText">返回</view>
 	<view slot="content">表单</view>
 </cu-custom>
