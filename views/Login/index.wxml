@@ -1,9 +1,5 @@
-<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
-	<view slot="backText">返回</view>
-	<view slot="content">表单</view>
-</cu-custom>
+<scroll-view class="scrollPage"></scroll-view>
 <view class="container">
-	
 	<view class="userinfo">
 		<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
 		<block wx:else>
@@ -11,18 +7,29 @@
 			<text class="userinfo-nickname">{{userInfo.nickName}}</text>
 			<!-- 登录表单 -->
 			<view class="form">
-				<view class="form-item s-text">账号</view>
-				<input class="form-item" type="text" bindinput="getAccount"></input>
-				<view class="form-item s-text">密码</view>
-				<input class="form-item" type="password" bindinput="getPassword"></input>
+				<view class="cu-form-group margin-top circle">
+					<view class="title">账号</view>
+					<input type="text" bindinput="getAccount" placeholder="请输入账号"></input>
+				</view>
+				<view>
+					<view class="cu-form-group margin-top circle">
+						<view class="title">密码</view>
+						<input type="password" bindinput="getPassword" placeholder="请输入密码"></input>
+					</view>
+				</view>
+				<view>
+					<text></text>
+				</view>
+
 			</view>
-			<view class="trans-btm btn-wrapper">
-				<button class="form-item login btnn" bindtap="login">登陆</button>
+			<view class="padding flex flex-direction">
+				<button class="cu-btn round bg-cyan margin-tb-sm lg" bindtap="login">登录</button>
 			</view>
+
 		</block>
 	</view>
-
+<!-- 
 	<view class="usermotto">
 		<text class="user-motto">{{motto}}</text>
-	</view>
+	</view> -->
 </view>
