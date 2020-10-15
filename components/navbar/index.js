@@ -12,6 +12,9 @@ Component({
     },
     isBack: {
       type: Boolean
+    },
+    title: {
+      type: String
     }
 
   },

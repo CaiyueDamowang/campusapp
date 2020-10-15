@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "Wrapper": "../../components/Wrapper"
+  }
 }

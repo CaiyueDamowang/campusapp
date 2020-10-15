@@ -1,7 +1,10 @@
 Component({
-  properties: {
+  properties: { // 接受父组件的传值
     isBack: {
       type: Boolean
+    },
+    title: {
+      type: String
     }
   },
 

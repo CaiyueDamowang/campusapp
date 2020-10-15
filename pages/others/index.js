@@ -4,35 +4,24 @@ Page({
   },
 
   onLoad: function (options) {
-    console.log(this.__proto__)
+    // 监听页面加载 / options页面加载时url的参数
   },
 
   onReady: function () {
-
+    // 监听页面就绪状态
   },
 
   onShow: function () {
-
+    // 监听页面展示
   },
 
 
   onHide: function () {
-
+    // 监听页面隐藏
   },
 
   onUnload: function () {
     // 监听页面卸载
-  },
-
-  onPullDownRefresh: function () {
-
-  },
-
-  onReachBottom: function () {
-
-  },
-
-  onShareAppMessage: function () {
-
   }
+
 })

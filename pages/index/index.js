@@ -1,7 +1,9 @@
 
 Page({
   data: {
-    router: 'mine'
+    router: 'mine',
+    isBack: true,
+    title: '传值'
   },
   
   onLoad() {

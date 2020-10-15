@@ -13,7 +13,7 @@ const extendOptions = (options, expantion) => {
     })
 
   if (hasConfict) {
-    console.log(optionsKeys)
+    console.err(optionsKeys)
     throw new Error(`${conflictKey} has already exsist， check out`);
   }
   // -- dev --
@@ -30,8 +30,12 @@ const extendComponent = (plugins) => {
   const constructor = Component
 
   return (options) => {
+    !options.options && (options.options = {})
+    options.options.stylesIsolation = 'shared'
+    
     !options.methods && (options.methods = {})
     options.methods = reduceMergeExpantions(options.methods, plugins)
+
     constructor(options)
   }
 }
@@ -44,6 +48,9 @@ const extendPage = (plugins) => {
     constructor(expandOptions)
   } 
 }
+
+
+
 module.exports = {
   extendPage,
   extendComponent

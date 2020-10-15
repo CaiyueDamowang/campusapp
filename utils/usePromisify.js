@@ -1,6 +1,7 @@
 
 const promisify = (api) => {
   if (typeof api !== 'function') throw new Error(`${api} is not a function`)
+
   return (option) => 
     new Promise((resolve, reject) => {
       api({
@@ -9,12 +10,9 @@ const promisify = (api) => {
         fail: reason => reject(reason),
       })
     })
-
-
-  return 
 }
+
 
 module.exports = {
   promisify
-
 }

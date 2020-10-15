@@ -1,6 +1,9 @@
 const app = getApp()
 
 Component({
+  options: {
+    styleIsolation: 'shared'
+  },
   data: {
     motto: 'Hello World',
     userInfo: {},
@@ -9,7 +12,7 @@ Component({
     username: '',
     password: ''
   },
-
+  
   lifetimes: {
     attached() {
       if (app.globalData.userInfo) {
