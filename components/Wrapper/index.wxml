@@ -1,5 +1,6 @@
 <view class="wrapper">
 		<!-- 带有首页样式或者返回的导航栏 包括： 手机屏幕状态栏等高的组件 和 下方导航 -->
+		<!-- 控制nav的title 和 isback -->
 	<Navbar  status-bar="{{statusBar}}" custom-bar="{{customBar}}" custom="{{custom}}" is-back="{{isBack}}" is-custom="{{!isCutsom}}"></Navbar>
 		<!-- view组件入口 -->
   <scroll-view class="view-entry" style="height: calc(100% - {{customBar}}px - {{windowBar}});" scroll-y>

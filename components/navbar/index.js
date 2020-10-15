@@ -26,7 +26,7 @@ Component({
 
   lifetimes: {
     attached() {
-      console.log(this.data.statusBar, this.data.custom, this.data.customBar, 'nav')
+
     }
   }
 })

@@ -1,7 +1,7 @@
 <cover-view class="nav-bar">
 	<!-- 此处直接查询 设备的信息 所以用px而不是rpx -->
 	<cover-view class="title-bar">
-		<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}" status-bar="{{statusBar}}" custom="{{custom}}" custom-bar="{{customBar}}" is-back="{{isBack}}">
+		<cu-custom bgColor="bg-gradual-pink" is-back="{{isBack}}" status-bar="{{statusBar}}" custom="{{custom}}" custom-bar="{{customBar}}">
 			<view slot="backText">返回</view>
 			<view slot="content">表单</view>
 		</cu-custom>
