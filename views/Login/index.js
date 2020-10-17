@@ -15,6 +15,7 @@ Component({
   
   lifetimes: {
     attached() {
+
       if (app.globalData.userInfo) {
         this.setData({
           userInfo: app.globalData.userInfo,
@@ -43,8 +44,8 @@ Component({
       }
     }
   },
-
   methods: {
+    aj:1,
     getUserInfo(e) {
       app.globalData.userInfo = e.detail.userInfo
       this.setData({

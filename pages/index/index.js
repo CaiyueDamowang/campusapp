@@ -7,10 +7,14 @@ Page({
   },
   
   onLoad() {
-
+    console.log(this.setData)
   },
 
   changeRouter(e) {
-    console.log(e.detail)
+    const router = e.detail.router
+    this.setData({
+      router
+    })
+
   }
 })

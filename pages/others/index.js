@@ -4,7 +4,8 @@ Page({
   },
 
   onLoad: function (options) {
-    // 监听页面加载 / options页面加载时url的参数
+    // 监听页面加载 
+    // options携带了页面加载时url的参数
   },
 
   onReady: function () {
