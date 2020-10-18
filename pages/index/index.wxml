@@ -1,4 +1,6 @@
 <Wrapper is-back="{{isBack}}" title="{{title}}">
-	<Login></Login>
-	<Mine wx:if="{{router === 'mine'}}" bind:changeRouter="changeRouter"></Mine>
+{{router}}
+	<Login wx:if="{{router === 'login'}}"></Login>
+	<Mine wx:if="{{router === 'mine'}}"></Mine>
+
 </Wrapper>

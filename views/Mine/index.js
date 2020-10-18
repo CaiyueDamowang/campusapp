@@ -12,7 +12,7 @@ Component({
   },
   lifetimes: {
     attached() {
-      this.triggerEvent('changeRouter', { router: 'login' })
+
     }
   }
 })

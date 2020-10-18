@@ -32,8 +32,6 @@ Component({
             custom: custom,
             customBar: custom.bottom + custom.top - e.statusBarHeight
           })
-        }).then(() => {
-          console.log(this.data.customBar, this.data.statusBar, this.data.custom, 'wrapper',   this.data.custom.bottom + this.data.custom.top - this.data.statusBar)
         })
     },
   }

@@ -12,7 +12,10 @@ Component({
   },
   methods: {
     redirectRouter(e) {
-      console.log(e)
+
+      this.store.setData({
+        router: 'mine'
+      })
     }
   }
 })

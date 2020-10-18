@@ -28,6 +28,7 @@ class Store {
 
   enterQue(dep, addedContext) {
     const que = this.updateQue
+    console.log(dep, 'enterQue')
     if (que.has(dep)) {
       Object.assign(dep.context, addedContext)   // 合并状态 最后调用一次setData
     } else {
@@ -49,7 +50,7 @@ class Store {
   setData(payload) {
     const payloadKeys = Object.keys(payload)
     this.data = Object.assign(this.data, payload)
-
+    
     this.deps.forEach(dep => {
       const instanceDataKeys = Object.keys(dep.data) // 只传递那些组件或者页面UI data中所需要的key
       if (!instanceDataKeys.length) return
@@ -63,18 +64,19 @@ class Store {
           return false
         }
       })
-
       if (includsKeys.length) {
-        enterQue(dep, context)
+        this.enterQue(dep, context)
       }
     })
-
+    
     this.wait && nextTick(this.flashQue())
+
   }
 
 }
 const useStore = (data) => {
   const store = new Store(data)
+
   return { store }
 }
 
