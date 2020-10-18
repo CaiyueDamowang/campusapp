@@ -12,9 +12,8 @@ Component({
   },
   methods: {
     redirectRouter(e) {
-
       this.store.setData({
-        router: 'mine'
+        router: e.target.dataset.route
       })
     }
   }
