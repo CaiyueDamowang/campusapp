@@ -7,9 +7,11 @@ Component({
   data: {
 
   },
+
   lifetimes: {
     
   },
+
   methods: {
     redirectRouter(e) {
       this.store.setData({

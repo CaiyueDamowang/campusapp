@@ -45,6 +45,28 @@ class Store {
     })
     this.wait = true
     this.updateQue.clear()
+    this.watchs = new Map()
+  }
+
+  addWatch(objectiveKey, cb) {
+    const cbs = this.watchs.get(objectiveKey)
+    if (cbs) {
+      cbs.push(cb)
+    } else {
+      this.watchs.set(objectiveKey, [cb])
+    }
+  }
+
+  notifyWatchs(payloadKeys) {
+    payloadKeys.forEach(key => {
+      const cbs = this.watchs.get(key)
+
+      nextTick(  // 允许在某个实例监听的函数执行中，插入响应监听的微任务逻辑
+                 // 因为有可能想拿到监听后的操作
+
+        cbs.forEach(cb => cb())
+      )
+    })
   }
 
   setData(payload) {
@@ -69,8 +91,9 @@ class Store {
       }
     })
     
-    this.wait && nextTick(this.flashQue())
-
+    this.wait
+      && nextTick(this.flashQue())
+      && nextTick(this.notifyWatchs(payloadKeys))
   }
 
 }
@@ -80,6 +103,34 @@ const useStore = (data) => {
   return { store }
 }
 
+const useWatch = () => {
+  const hasInstalledStore = i => Object.hasOwnProperty.call(i, 'store')
+  
+  const useWatch = function (objectiveKey, cb) {
+    if (!hasInstalledStore(this)) {
+      return 
+    }
+    this.store.addWatch(objectiveKey, cb)
+  }
+
+  const useWatchOnce = function (objectiveKey, cb) {
+    const _cb = () => {
+      cb()
+      setTimeout(() => {
+        const cbs = this.store.watchs.get(objectiveKey)
+        this.store.watchs.set(objectiveKey, cbs.filter(c => c !== cb))
+      })
+    }
+    this.store.addWatch(objectiveKey, _cb)
+  }
+
+  return {
+    useWatch,
+    useWatchOnce,
+  }
+}
+
 module.exports = {
-  useStore
+  useStore,
+  useWatch,
 }

@@ -32,9 +32,9 @@ const extendComponent = (plugins) => {
     const lifetimes = options.lifetimes // 不传lifetime则视为不需要全局管理的组件
     if (lifetimes) {
       const created = lifetimes.created
-      lifetimes.created = created ?
-        _initLifetime(created, composePlugin) :
-        _initLifetime(null, composePlugin)
+      lifetimes.created = created
+      ? _initLifetime(created, composePlugin)
+      : _initLifetime(null, composePlugin)
     }
     constructor(options)
   }
